@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Crypto_Wallet_App/static/css/main.1cc48f76.css",
-    "main.js": "/Crypto_Wallet_App/static/js/main.64066bae.js",
+    "main.css": "/Crypto_Wallet_App/static/css/main.71b04bb1.css",
+    "main.js": "/Crypto_Wallet_App/static/js/main.ff8ae1f5.js",
     "static/js/787.b736b569.chunk.js": "/Crypto_Wallet_App/static/js/787.b736b569.chunk.js",
     "static/media/icon.svg": "/Crypto_Wallet_App/static/media/icon.44e866ff69c1ad3d75879f9741b657ee.svg",
     "static/media/BNB_icon.svg": "/Crypto_Wallet_App/static/media/BNB_icon.42de5156af7753f44e1d51ddc9ed660b.svg",
     "static/media/ETH_icon.svg": "/Crypto_Wallet_App/static/media/ETH_icon.bc107f510b40acf5ca685f3236969a9e.svg",
     "index.html": "/Crypto_Wallet_App/index.html",
-    "main.1cc48f76.css.map": "/Crypto_Wallet_App/static/css/main.1cc48f76.css.map",
-    "main.64066bae.js.map": "/Crypto_Wallet_App/static/js/main.64066bae.js.map",
+    "main.71b04bb1.css.map": "/Crypto_Wallet_App/static/css/main.71b04bb1.css.map",
+    "main.ff8ae1f5.js.map": "/Crypto_Wallet_App/static/js/main.ff8ae1f5.js.map",
     "787.b736b569.chunk.js.map": "/Crypto_Wallet_App/static/js/787.b736b569.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cc48f76.css",
-    "static/js/main.64066bae.js"
+    "static/css/main.71b04bb1.css",
+    "static/js/main.ff8ae1f5.js"
   ]
 }
