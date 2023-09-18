@@ -40,7 +40,11 @@ const Disperse = () => {
 
 			// Check if the address length is 42 characters
 			if (address.length !== 42) {
-				errors.push('Invalid address length in line ' + (i + 1) + ': ' + address);
+				errors.push('Address needs 42 characters in line ' + (i + 1) + ': ' + address);
+			}
+
+			if (!address.startsWith('0x')) {
+				errors.push('Address needs to start with 0x in line ' + (i + 1) + ': ' + address);
 			}
 
 			// Check if the amount is a valid number
@@ -124,7 +128,7 @@ const Disperse = () => {
 
 	return (
 		<div className="mt-24 mx-12 mb-12 rounded-3xl bg-white flex justify-center">
-			<div className="flex flex-col justify-center w-7/12 pt-16 pb-8">
+			<div className="flex flex-col justify-center w-2/3 pt-16 pb-8">
 				<h3 className="text-4xl font-medium">Prepare to scatter</h3>
 				<div className="mt-2">We support the following Networks</div>
 				<div className="flex gap-8 mt-6 ml-4">
