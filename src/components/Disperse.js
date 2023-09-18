@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BNB_Icon from "../static/images/BNB_icon.svg"
 import ETH_Icon from "../static/images/ETH_icon.svg"
 
@@ -8,6 +8,14 @@ const Disperse = () => {
 	const [error, setError] = useState([]);
 	const [showOptions, setShowOptions] = useState(false);
 	const [uniqueAddress, setUniqueAddress] = useState(new Map());
+	const [lineIndices, setLineIndices] = useState([]);
+
+	useEffect(() => {
+		// Calculate line indices whenever inputValue changes
+		const lines = inputValue.split('\n');
+		const indices = Array.from({ length: lines.length }, (_, index) => index + 1);
+		setLineIndices(indices);
+	}, [inputValue]);
 
 	const validateInput = (input) => {
 		if (!input) {
@@ -126,6 +134,7 @@ const Disperse = () => {
 		setShowOptions(false);
 	};
 
+
 	return (
 		<div className="mt-24 mx-12 mb-12 rounded-3xl bg-white flex justify-center">
 			<div className="flex flex-col justify-center w-2/3 pt-16 pb-8">
@@ -142,15 +151,29 @@ const Disperse = () => {
 					</div>
 				</div>
 				<div className="mt-6 ml-2 font-medium">Token Address</div>
-				<input placeholder="Select or search by address" className="block border p-4 w-full bg-slate-100 mt-2" />
+				<input placeholder="Select or search by address" className="block border p-4 w-stretch bg-slate-100 mt-2" />
 				<div className="mt-6 ml-2 font-medium">Addresses with Amounts</div>
-				<textarea
+				<div className="flex">
+					<div className="w-8 border border-slate-200 bg-slate-100 mt-2 pt-2">
+						{lineIndices.map((index) => (
+							<div key={index} className="text-center">{index}</div>
+						))}
+					</div>
+					<textarea
+						rows="10"
+						className="block border p-2 w-full bg-slate-100 mt-2 focus:border focus:outline-none"
+						placeholder="Enter Address and Amount separated by ',' or ' ' or '=' and Each Address in a new line."
+						value={inputValue}
+						onChange={(e) => setInputValue(e.target.value)}
+					></textarea>
+				</div>
+				{/* <textarea
 					rows="10"
 					className="block border p-2 w-full bg-slate-100 mt-2"
 					placeholder="Enter Address and Amount seperated by ',' or ' ' or '=' and Each Address in a new line."
 					value={inputValue}
 					onChange={(e) => setInputValue(e.target.value)}
-				></textarea>
+				></textarea> */}
 				{showOptions ? (
 					<div className="flex justify-end text-red-500 mt-2">
 						<span className="cursor-pointer" onClick={keepFirstOne}>Keep the first one</span>
